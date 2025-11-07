@@ -22,13 +22,6 @@ Features
 
 ---
 
-## 📸 Screenshots
-
-| Login Page | Admin Dashboard | Quiz Window |
-|-------------|----------------|--------------|
-|(https://drive.google.com/drive/folders/1m3HGL74tLJhSx97YBWWMbsxumX9fIo_c?q=type:image%20parent:1m3HGL74tLJhSx97YBWWMbsxumX9fIo_c)
-
-
 ## ⚙️ Setup & Installation
 
 ### 1️⃣ Clone the Repository
