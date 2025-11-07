@@ -113,7 +113,6 @@ OnlineQuizApplication/
 ## 🙌 Author
 
 👩‍💻 **Bhanu Sri**
-📧 [internship.innobyteservices@gmail.com](mailto:internship.innobyteservices@gmail.com)
 💼 GitHub: [bhanuperuri](https://github.com/bhanuperuri)
 
 
