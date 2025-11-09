@@ -1,4 +1,4 @@
-package com.quizapp;
+package com.quizapp.model;
 
 public class Quiz {
     public int id;

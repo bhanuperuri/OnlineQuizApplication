@@ -1,4 +1,9 @@
-package com.quizapp;
+package com.quizapp.dao;
+
+import com.quizapp.model.Choice;
+import com.quizapp.DBHelper;
+import com.quizapp.model.Question;
+import com.quizapp.model.Quiz;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,6 @@
-package com.quizapp;
+package com.quizapp.frame;
+
+import com.quizapp.dao.QuizDAO;
 
 import javax.swing.*;
 import java.awt.*;

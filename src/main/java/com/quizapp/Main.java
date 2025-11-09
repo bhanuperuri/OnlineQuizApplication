@@ -1,5 +1,9 @@
 package com.quizapp;
 
+import com.quizapp.dao.UserDAO;
+import com.quizapp.frame.LoginFrame;
+import com.quizapp.model.User;
+
 import javax.swing.SwingUtilities;
 
 public class Main {

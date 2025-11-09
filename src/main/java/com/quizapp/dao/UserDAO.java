@@ -1,4 +1,8 @@
-package com.quizapp;
+package com.quizapp.dao;
+
+import com.quizapp.DBHelper;
+import com.quizapp.util.PasswordUtil;
+import com.quizapp.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,5 +69,49 @@ public class UserDAO {
 
         return match;
     }
+
+
+    // returns true if username already exists
+    public static boolean userExists(String username) throws SQLException {
+        String sql = "SELECT 1 FROM users WHERE username = ?";
+        try (Connection conn = DBHelper.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, username);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
+        }
+    }
+
+    // register a new user (hashes password using PasswordUtil)
+    public static boolean registerUser(String username, char[] password) throws SQLException {
+        if (userExists(username)) return false;
+        String salt = PasswordUtil.generateSalt();
+        String hash = PasswordUtil.hash(password, salt);
+
+        String sql = "INSERT INTO users (username, password_hash, salt, is_admin) VALUES (?, ?, ?, ?)";
+        try (Connection conn = DBHelper.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, username);
+            ps.setString(2, hash);
+            ps.setString(3, salt);
+            ps.setInt(4, 0);
+            int r = ps.executeUpdate();
+            return r > 0;
+        } finally {
+            java.util.Arrays.fill(password, '\0');
+        }
+    }
+    public static User loginUser(String username, String plainPassword) throws SQLException {
+        if (validateLogin(username, plainPassword.toCharArray())) {
+            return findByUsername(username);
+        }
+        return null;
+    }
+
+
+
+
+
 }
 

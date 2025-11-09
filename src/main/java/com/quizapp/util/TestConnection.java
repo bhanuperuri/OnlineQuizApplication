@@ -1,4 +1,6 @@
-package com.quizapp;
+package com.quizapp.util;
+
+import com.quizapp.DBHelper;
 
 import java.sql.Connection;
 

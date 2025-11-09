@@ -1,4 +1,4 @@
-package com.quizapp;
+package com.quizapp.util;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
